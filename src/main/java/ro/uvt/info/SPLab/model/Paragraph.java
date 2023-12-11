@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Paragraph {
+public class Paragraph implements Element {
     private String text;
 
     public void print()

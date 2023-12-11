@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Image {
+public class Image implements Element {
     private String imageName;
 
     public void print() {
