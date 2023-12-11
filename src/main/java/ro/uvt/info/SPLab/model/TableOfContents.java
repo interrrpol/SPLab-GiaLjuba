@@ -1,22 +1,17 @@
 package ro.uvt.info.SPLab.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public class TableOfContents implements Element{
+@Getter
+@Setter
+@NoArgsConstructor
+public class TableOfContents {
 
-    @Override
-    public void print() {
-
-    }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void remove() {
-
+    public void print()
+    {
+        // TODO: Implement
     }
 }
