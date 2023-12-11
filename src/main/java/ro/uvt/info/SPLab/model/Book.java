@@ -7,32 +7,22 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Book {
+public class Book extends Section{
 
     private String title;
-    private List<Author> authors = new ArrayList<>();
-    private List<Chapter> chapters = new ArrayList<>();
+    private ArrayList<Author> authors = new ArrayList<>();
+
 
     public Book(String title) {
-        this.title = title;
+        super(title);
     }
 
-    public void print()
-    {
-        // TODO: Implement
-    }
 
     public void addAuthor(Author author) {
-        this.authors.add(author);
+        authors.add(author);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter chapter = new Chapter(chapterName);
-        this.chapters.add(chapter);
-        return this.chapters.size() - 1;
-    }
-
-    public Chapter getChapter(int indexChapterOne) {
-        return this.chapters.get(indexChapterOne);
+    public void addContent(Element element){
+        super.add(element);
     }
 }

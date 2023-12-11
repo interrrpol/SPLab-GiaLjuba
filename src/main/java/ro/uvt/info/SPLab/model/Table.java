@@ -1,20 +1,31 @@
 package ro.uvt.info.SPLab.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Table implements Element {
-    private String title;
+    private String something;
 
-    public void print()
-    {
-        System.out.print("Table with Title: ");
-        System.out.println(this.title);
+    public Table(String something) {
+        this.something = something;
+    }
+
+    public void print() {
+        System.out.println("Something: " + something);
+    }
+
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int id) {
+        return null;
     }
 }

@@ -11,9 +11,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Author {
     private String name;
+    private String surname;
 
     public void print()
     {
-        // TODO: Implement
+        System.out.println("Name: " + name + ", surname: " + surname);
     }
 }

@@ -1,20 +1,32 @@
 package ro.uvt.info.SPLab.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Paragraph implements Element {
     private String text;
 
-    public void print()
-    {
-        System.out.print("Paragraph: ");
-        System.out.println(this.text);
+    public Paragraph(String text) {
+        this.text = text;
     }
+
+    public void print() {
+        System.out.println("Text: " + text);
+    }
+
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int id) {
+        return null;
+    }
+
 }

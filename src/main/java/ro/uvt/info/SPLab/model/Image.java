@@ -1,19 +1,27 @@
 package ro.uvt.info.SPLab.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Image implements Element {
-    private String imageName;
+    private String url;
 
-    public void print() {
-        System.out.print("Image with name: ");
-        System.out.println(this.imageName);
+    public Image(String url){
+        this.url = url;
+    }
+
+    public void print(){
+        System.out.println("Image with url:" + url);
+    }
+
+    @Override
+    public void add(Element element){}
+
+    @Override
+    public void remove(Element element){}
+
+    @Override
+    public Element get(int id){
+        return null;
     }
 }
