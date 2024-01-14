@@ -33,6 +33,10 @@ public class Image implements Element, Picture {
     public Element get(int id){
         return null;
     }
+    @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
+    }
 
     @Override
     public String url() {

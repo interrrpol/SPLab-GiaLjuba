@@ -34,6 +34,11 @@ public class Section implements Element {
         return elements.get(id);
     }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
+    }
+
 }
 
 

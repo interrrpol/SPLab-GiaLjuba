@@ -36,4 +36,9 @@ public class ImageProxy implements Element, Picture{
         }
         return imagine;
     }
+    @Override
+    public void accept(Visitor v) {
+        v.visitImageProxy(this);
+    }
+
 }

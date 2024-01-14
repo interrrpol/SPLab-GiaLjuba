@@ -26,4 +26,9 @@ public class TableOfContents implements Element{
     public Element get(int id) {
         return null;
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitTableOfContents(this);
+    }
 }

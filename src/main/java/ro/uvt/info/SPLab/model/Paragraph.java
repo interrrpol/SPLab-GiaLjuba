@@ -2,6 +2,7 @@ package ro.uvt.info.SPLab.model;
 
 import lombok.Data;
 import ro.uvt.info.SPLab.services.AlignStrategy;
+import ro.uvt.info.SPLab.services.Visitor;
 
 @Data
 public class Paragraph implements Element {
@@ -54,5 +55,11 @@ public class Paragraph implements Element {
     public Element get(int id) {
         return null;
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
+    }
+
 
 }
