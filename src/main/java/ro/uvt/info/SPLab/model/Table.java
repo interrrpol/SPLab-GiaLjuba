@@ -1,4 +1,5 @@
 package ro.uvt.info.SPLab.model;
+import ro.uvt.info.SPLab.services.Visitor;
 
 import lombok.Data;
 

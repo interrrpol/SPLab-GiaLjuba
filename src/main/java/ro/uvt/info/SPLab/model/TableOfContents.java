@@ -1,6 +1,8 @@
 package ro.uvt.info.SPLab.model;
 
 
+import ro.uvt.info.SPLab.services.Visitor;
+
 public class TableOfContents implements Element{
 
     private String something;
