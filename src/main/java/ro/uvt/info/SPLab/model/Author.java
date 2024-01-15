@@ -5,11 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+import java.io.Serializable;
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public class Author implements Serializable{
     private String name;
     private String surname;
 
