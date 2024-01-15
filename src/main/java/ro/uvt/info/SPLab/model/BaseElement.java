@@ -1,23 +1,20 @@
 package ro.uvt.info.SPLab.model;
 
-
-import ro.uvt.info.SPLab.services.Visitor;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import ro.uvt.info.SPLab.services.Visitor;
 
 @Data
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class BaseElement implements Element{
 
-public class TableOfContents implements Element{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String something;
 
     @Override
-    public void print() {
-        System.out.println("Something: " + something);
-    }
+    public void print(){}
 
     @Override
     public void add(Element element) {
@@ -36,6 +33,6 @@ public class TableOfContents implements Element{
 
     @Override
     public void accept(Visitor v) {
-        v.visitTableOfContents(this);
+
     }
 }

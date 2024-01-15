@@ -1,38 +1,51 @@
 package ro.uvt.info.SPLab.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 import ro.uvt.info.SPLab.services.Visitor;
 
 import java.util.concurrent.TimeUnit;
 
 @Data
-public class Image implements Element, Picture {
-    private String numeImagine;
+@Entity
+public class Image extends BaseElement implements Picture{
+    @Id
+    private int id;
+    private String imageName;
 
-    public Image(String name){
-        numeImagine = name;
-        try{
+    public Image(String name) {
+        imageName = name;
+        try {
             TimeUnit.SECONDS.sleep(5);
-
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void print(){
-        System.out.println("Image with name:" + numeImagine);
+    public Image() {
+
+    }
+
+    public void print() {
+        System.out.println("Image with name: " + imageName);
     }
 
     @Override
-    public void add(Element element){}
+    public void add(Element element) {
+
+    }
 
     @Override
-    public void remove(Element element){}
+    public void remove(Element element) {
+
+    }
 
     @Override
-    public Element get(int id){
+    public Element get(int id) {
         return null;
     }
+
     @Override
     public void accept(Visitor v) {
         v.visitImage(this);
@@ -42,4 +55,5 @@ public class Image implements Element, Picture {
     public String url() {
         return null;
     }
+
 }

@@ -1,12 +1,19 @@
 package ro.uvt.info.SPLab.model;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import ro.uvt.info.SPLab.services.Visitor;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.ArrayList;
 
+@Data
+@Entity
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Section implements Element {
+public class Section extends BaseElement{
+    @Id
+    private int id;
     private String title;
+    @OneToMany(targetEntity = BaseElement.class)
     private ArrayList<Element> elements = new ArrayList<>();
 
     public Section(String title) {
@@ -20,6 +27,10 @@ public class Section implements Element {
             element.print();
         }
     }
+
+    public Section(){}
+
+
 
     @Override
     public void add(Element element) {

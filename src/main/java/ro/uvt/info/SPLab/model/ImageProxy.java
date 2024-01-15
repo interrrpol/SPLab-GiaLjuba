@@ -1,13 +1,26 @@
 package ro.uvt.info.SPLab.model;
 import ro.uvt.info.SPLab.services.Visitor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import lombok.Data;
 
-public class ImageProxy implements Element, Picture{
-    String url;
+@Data
+@Entity
+public class ImageProxy extends BaseElement implements Picture{
+    @Id
+    private int id;
+    private String url;
+    @Transient
     private Image imagine;
 
     public ImageProxy(String url){
         this.url = url;
         this.imagine=null;
+    }
+
+    public ImageProxy() {
+
     }
     @Override
     public void print(){

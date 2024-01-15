@@ -13,7 +13,7 @@ import ro.uvt.info.SPLab.services.*;
 public class SpLabApplication {
 
 	public static void main(String[] args) throws Exception {
-
+		SpringApplication.run(SpLabApplication.class, args);
 		Book noapteBuna = new Book("Noapte buna, copii!");
 		Author rpGheo = new Author("Radu Pavel", " Gheo");
 		noapteBuna.addAuthor(rpGheo);
@@ -31,13 +31,13 @@ public class SpLabApplication {
 		cap111.add(cap1111);
 		cap1111.add(new Image("Image subchapter 1.1.1.1"));
 
-		String filePath = "books.txt";
-
-		Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
-		Invoker invoker = new Invoker();
-		invoker.setCommand(bookSaveCommand);
-
-		invoker.executeCommand();
+//        String filePath = "books.txt";
+//
+//        Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
+//        Invoker invoker = new Invoker();
+//        invoker.setCommand(bookSaveCommand);
+//
+//        invoker.executeCommand();
 
 
 	}
